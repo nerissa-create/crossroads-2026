@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Accommodations | Crossroads 2026 — Salt Lake City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap&family=Archivo:wght@200;400;500;600;700" rel="stylesheet">
+<style>
+
+  :root{
+    --ttp-navy:#1a2744;
+    --ttp-navy-2:#213260;
+    --ttp-red:#c8102e;
+    --ttp-red-light:#e8445e;
+    --ink:#1a2744;
+    --ink-2:#f5f0e8;
+    --ink-3:#213260;
+    --paper:#f5f0e8;
+    --paper-2:#ffffff;
+    --brass:#c8102e;
+    --brass-light:#c8102e;
+    --brass-dark:#8a0a1f;
+    --signal:#c8102e;
+    --signal-light:#e8445e;
+    --steel:#5a6a8a;
+    --steel-dim:#7a8aaa;
+    --paper-text:#1a2744;
+    --paper-text-2:#3a4a6a;
+    --ink-text:#ffffff;
+    --ink-text-2:#c9d4f0;
+    --hair:rgba(26,39,68,0.10);
+    --hair-strong:rgba(26,39,68,0.18);
+    --hair-visible:rgba(26,39,68,0.22);
+    --paper-hair:rgba(26,39,68,0.12);
+    --field-border:rgba(26,39,68,0.40);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  /* Alternating section backgrounds: white then beige */
+  section:nth-of-type(odd){background:#ffffff;}
+  section:nth-of-type(even){background:var(--paper);}
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ttp-red);
+  }
+  .serif{font-family:'Fraunces',serif;}
+  .rule{height:1px;background:rgba(26,39,68,0.12);border:none;margin:0;}
+  .rule-strong{height:1px;background:rgba(26,39,68,0.2);border:none;margin:0;}
+  ::selection{background:var(--ttp-red);color:#ffffff;}
+  :focus-visible{outline:2px solid var(--ttp-red);outline-offset:3px;}
+  .paper,.venue-panel,.rsvp-panel,.stub,.quote-card{--focus-color:var(--brass-dark);}
+  .venue-panel :focus-visible,.rsvp-panel :focus-visible,.stub :focus-visible,.quote-card :focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+  .skip-link{
+    position:absolute;left:-9999px;top:0;z-index:999;
+    background:var(--paper);color:var(--paper-text);
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+    padding:12px 20px;border-radius:0 0 3px 0;text-decoration:underline;
+  }
+  .skip-link:focus{left:0;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .link-brass{color:var(--ttp-navy);text-decoration:underline;text-decoration-color:rgba(26,39,68,0.4);text-underline-offset:3px;}
+  .link-brass:hover{text-decoration-color:var(--ttp-red);}
+  /* link-brass on dark backgrounds (venue panel, board) gets overridden below */
+  .board .link-brass, .venue-panel .link-brass{color:#f5f0e8;text-decoration-color:rgba(245,240,232,0.4);}
+  .board .link-brass:hover, .venue-panel .link-brass:hover{text-decoration-color:#f5f0e8;}
+  .link-ink{color:var(--paper-text);text-decoration:underline;text-decoration-color:rgba(35,31,22,0.35);text-underline-offset:3px;}
+  .link-ink:hover{text-decoration-color:var(--signal);}
+  [id]{scroll-margin-top:24px;}
+
+  /* ============ TOP BAR ============ */
+  .topbar{padding:12px 0;background:var(--ttp-navy);border-bottom:2px solid var(--ttp-red);}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brandmark{display:flex;align-items:center;gap:14px;}
+  .brandmark .ttp-logo{display:flex;align-items:center;gap:8px;}
+  .brandmark .ttp-wordmark{font-family:'Archivo',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;color:#ffffff;text-transform:uppercase;}
+  .ttp-logo-circle{
+    display:flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    background:#ffffff;
+    flex-shrink:0;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.3);
+  }
+  .ttp-logo-img{width:26px;height:26px;display:block;}
+  .brandmark .divider{width:1px;height:28px;background:rgba(255,255,255,0.25);}
+  .brandmark .xr{font-family:'Fraunces',serif;font-size:17px;letter-spacing:0.02em;color:#f5f0e8;}
+  .brandmark .crossroads-logo-svg{height:44px;width:auto;display:block;flex-shrink:0;}
+  .hero-crossroads-logo{margin-bottom:20px;}
+  .hero-crossroads-logo svg{height:80px;width:auto;max-width:100%;display:block;}
+  .support{display:flex;flex-direction:column;align-items:flex-end;gap:5px;text-align:right;}
+  .support-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.1em;color:#c9d4f0;text-transform:uppercase;}
+  .dfc-logo-img{height:30px;width:auto;display:block;}
+  .dfc-logo-wrap{background:rgba(255,255,255,0.95);border-radius:3px;padding:5px 12px;display:inline-flex;align-items:center;}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;padding:52px 0 44px;overflow:hidden;background:var(--ttp-navy);}
+  .tracks{position:absolute;inset:0;pointer-events:none;z-index:0;}
+  .hero-content{position:relative;z-index:1;}
+  .ticket-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;
+    color:#f5f0e8;
+    border:1px solid rgba(245,240,232,0.5);
+    background:rgba(245,240,232,0.08);
+    padding:6px 14px;border-radius:2px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .ticket-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--ttp-red);}
+  h1.headline{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(36px,5vw,58px);
+    line-height:1.06;
+    letter-spacing:-0.01em;
+    margin:0 0 20px;
+    color:#ffffff;
+    max-width:15ch;
+    text-wrap:balance;
+  }
+  .dek{
+    font-size:17px;
+    line-height:1.65;
+    color:#c9d4f0;
+    max-width:56ch;
+    margin:0 0 30px;
+    text-wrap:pretty;
+  }
+
+  /* ---- ticket / RSVP combined card ---- */
+  .stub{
+    display:flex;flex-wrap:wrap;gap:0;
+    background:var(--paper);
+    color:var(--paper-text);
+    border-radius:3px;
+    overflow:hidden;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,0.55);
+  }
+  .stub-info{flex:1 1 220px;padding:22px 24px;border-right:2px dashed rgba(35,31,22,0.18);}
+  .stub-form{flex:1.3 1 320px;padding:22px 24px;background:var(--paper-2);}
+  .stub-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper-text-2);margin:0 0 4px;}
+  .stub-value{font-family:'Fraunces',serif;font-size:19px;color:var(--ttp-navy);margin:0 0 14px;}
+  .stub-value:last-child{margin-bottom:0;}
+  .stub-value a{color:var(--ttp-navy);text-decoration:underline;text-decoration-color:rgba(26,39,68,0.3);text-underline-offset:3px;}
+  .stub-value a:hover{text-decoration-color:var(--ttp-red);}
+
+  .rsvp-form-title{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ttp-red);margin:0 0 12px;}
+
+  /* ---- shared button ---- */
+  .btn{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;
+    background:var(--ttp-navy);color:#ffffff;border:1px solid var(--ttp-navy);
+    padding:13px 22px;border-radius:2px;cursor:pointer;
+    text-align:center;text-decoration:none;
+    transition:background 0.15s ease;
+    font-weight:600;
+  }
+  .btn:hover{background:var(--ttp-navy-2);color:#ffffff;}
+  .btn-block{display:block;width:100%;}
+  .rsvp-microcopy{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--paper-text-2);margin-top:10px;letter-spacing:0.02em;line-height:1.5;}
+
+  /* ============ SECTION SHELL ============ */
+  section{padding:48px 0;}
+  .section-head{margin-bottom:26px;}
+  .section-head .eyebrow{margin-bottom:12px;}
+  h2.section-title{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(26px,3.2vw,36px);line-height:1.18;margin:0;
+    color:var(--ink);
+    max-width:46ch;
+    text-wrap:balance;
+  }
+  p{color:var(--paper-text-2);font-size:16px;line-height:1.72;margin:0 0 16px;text-wrap:pretty;}
+  p:last-child{margin-bottom:0;}
+  .measure{max-width:64ch;}
+
+  /* ============ WHY THIS GATHERING ============ */
+  .why-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:start;}
+  .quote-stack{display:flex;flex-direction:column;gap:18px;}
+  .quote-card{background:var(--paper);color:var(--paper-text);border-radius:3px;padding:26px 24px;border-left:3px solid var(--ttp-red);}
+  .quote-card .qmark{font-family:'Fraunces',serif;font-size:44px;line-height:0.5;color:var(--ttp-red);display:block;margin-bottom:12px;}
+  .quote-card p{color:var(--paper-text);font-family:'Fraunces',serif;font-style:italic;font-size:17px;line-height:1.55;margin-bottom:16px;}
+  .quote-card .attrib{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;color:var(--paper-text-2);text-transform:uppercase;}
+
+  /* ============ VENUE + SCHEDULE (combined) ============ */
+  .venue-panel{background:var(--ttp-navy);color:#ffffff;border-radius:3px;padding:40px;position:relative;overflow:hidden;}
+  .venue-panel .eyebrow{color:#f5f0e8;letter-spacing:0.16em;}
+  .venue-panel h2.section-title{color:#ffffff;}
+  .venue-panel p{color:#c9d4f0;}
+  .venue-panel .stub-label{color:#c9d4f0 !important;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 4px;}
+  .venue-panel .stub-value{color:#ffffff !important;font-family:'Fraunces',serif;font-size:16px;}
+  .venue-panel .venue-meta{border-top:1px solid rgba(255,255,255,0.15);}
+  .arches{width:100%;height:auto;display:block;margin-top:26px;}
+  .venue-meta{display:flex;gap:32px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid var(--paper-hair);}
+  .venue-meta div{flex:1 1 160px;}
+  .venue-meta .stub-label{color:var(--paper-text-2);}
+  .venue-meta .stub-value{font-size:16px;}
+
+  .board-mount-label{
+    display:flex;align-items:center;gap:10px;
+    margin:30px 0 14px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+    color:#c9d4f0;
+  }
+  .board-mount-label::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.15);}
+  .board{background:var(--ttp-navy);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:6px;box-shadow:0 18px 40px -18px rgba(0,0,0,0.4);}
+  .board-inner{background:var(--ttp-navy);border-radius:2px;overflow:hidden;list-style:none;margin:0;padding:0;}
+  .board-row{display:grid;grid-template-columns:96px 1fr 150px;gap:18px;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.12);font-family:'IBM Plex Mono',monospace;}
+  .board-row:last-child{border-bottom:none;}
+  .board-date{color:#f5f0e8;font-size:14px;letter-spacing:0.03em;line-height:1.4;}
+  .board-date .wd{display:block;font-size:10.5px;color:#c9d4f0;letter-spacing:0.1em;}
+  .board-event .name{color:#ffffff;font-size:14.5px;letter-spacing:0.03em;text-transform:uppercase;display:block;margin-bottom:3px;}
+  .board-event .venue{color:#c9d4f0;font-size:12.5px;letter-spacing:0.02em;text-transform:none;}
+  .board-event .venue a{color:#f5f0e8;text-decoration:underline;text-decoration-color:rgba(245,240,232,0.4);text-underline-offset:2px;}
+  .board-event .venue a:hover{text-decoration-color:#f5f0e8;}
+  .board-time{color:#c9d4f0;font-size:13px;text-align:right;letter-spacing:0.03em;}
+  .board-foot{display:flex;justify-content:space-between;align-items:center;padding:13px 20px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:#c9d4f0;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.12);}
+
+  /* ============ MAP ============ */
+  .map-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .map-card{background:#ffffff;border:1px solid var(--hair-visible);border-radius:3px;overflow:hidden;}
+  .map-card iframe{width:100%;height:180px;border:0;display:block;filter:grayscale(0.15) contrast(1.05);}
+  .map-card-label{padding:16px 18px;}
+  .map-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--ttp-red);text-transform:uppercase;margin-bottom:6px;display:block;}
+  .map-card .name{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--ttp-navy);margin:0 0 4px;}
+  .map-card .addr{font-size:12.5px;color:var(--steel);line-height:1.5;}
+  .map-note{
+    display:flex;align-items:flex-start;gap:12px;
+    margin-top:18px;padding-top:16px;border-top:1px solid rgba(26,39,68,0.14);
+  }
+  .map-note .glyph{flex:0 0 auto;margin-top:2px;}
+  .map-note p{margin:0;font-size:14.5px;color:var(--paper-text-2);}
+  .map-note strong{color:var(--ttp-navy);font-weight:500;}
+
+  /* ============ WHY US / LEDGER ============ */
+  .ties{width:100%;height:auto;display:block;margin:26px 0 0;}
+  .ledger{border-top:1px solid var(--hair-strong);}
+  .ledger-row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--hair-strong);}
+  .ledger-row .state{font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--ttp-navy);margin:0;}
+  .ledger-row .tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:var(--ttp-red);text-transform:uppercase;margin-bottom:6px;border:1px solid rgba(200,16,46,0.25);border-radius:2px;padding:2px 6px;}
+  .ledger-row p{margin:0;}
+
+  /* ============ ROSTER ============ */
+  .roster-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair-visible);border:1px solid var(--hair-visible);}
+  .roster-card{background:#ffffff;padding:24px 26px;}
+  .roster-card .role{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--ttp-red);text-transform:uppercase;margin-bottom:8px;}
+  .roster-card .name{font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--ttp-navy);margin:0 0 6px;}
+  .roster-card .desc{font-size:14px;color:var(--paper-text-2);line-height:1.5;}
+  .roster-more{grid-column:1/-1;background:var(--paper);padding:22px 28px;font-size:14px;color:var(--steel);}
+
+  /* ============ NONPARTISAN NOTE ============ */
+  .np-strip{display:flex;align-items:flex-start;gap:18px;border-left:3px solid var(--ttp-red);padding:6px 0 6px 24px;}
+  .np-strip p{margin:0;font-size:15px;color:var(--paper-text-2);}
+
+  /* ============ RSVP (lower, full) ============ */
+  .rsvp-panel{background:var(--ttp-navy);color:#ffffff;border-radius:3px;padding:40px;}
+  .rsvp-panel .eyebrow{color:#f5f0e8;letter-spacing:0.16em;}
+  .rsvp-panel h2.section-title{color:#ffffff;margin:12px 0 12px;}
+  .rsvp-panel p{color:#c9d4f0;max-width:60ch;}
+  .rsvp-panel a.link-ink{color:#ffffff;text-decoration-color:rgba(255,255,255,0.5);}
+  .rsvp-panel .btn{background:var(--ttp-red);border-color:var(--ttp-red);color:#ffffff;font-weight:600;}
+  .rsvp-panel .btn:hover{background:#a00d25;border-color:#a00d25;}
+  .rsvp-panel .rsvp-microcopy{color:#c9d4f0;}
+  .rsvp-actions{margin-top:22px;}
+
+  /* ============ KNOW BEFORE YOU GO ============ */
+  .live-note{
+    display:flex;align-items:flex-start;gap:12px;
+    border:1px solid var(--hair-visible);border-left:3px solid var(--ttp-red);
+    border-radius:3px;background:var(--paper);
+    padding:16px 20px;margin:0 0 26px;
+  }
+  .live-note .dot{
+    flex:0 0 auto;width:8px;height:8px;border-radius:50%;
+    background:var(--ttp-red);margin-top:8px;
+  }
+  .live-note p{margin:0;font-size:14.5px;color:var(--paper-text-2);}
+  .kby-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair-visible);border:1px solid var(--hair-visible);}
+  .kby-card{background:#ffffff;padding:24px 24px;}
+  .kby-card .eyebrow{margin:0 0 10px;font-weight:400;}
+  .kby-card p{font-size:14.5px;}
+  .kby-card ul{margin:0;padding:0;list-style:none;}
+  .kby-card li{
+    font-size:14.5px;color:var(--paper-text-2);line-height:1.6;
+    padding:10px 0;border-bottom:1px solid var(--hair);
+  }
+  .kby-card li:first-child{padding-top:0;}
+  .kby-card li:last-child{border-bottom:none;padding-bottom:0;}
+  .kby-card li b{color:var(--ttp-navy);font-weight:500;display:block;font-size:13px;letter-spacing:0.01em;}
+  .kby-pending{color:var(--ttp-red);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;}
+  .kby-cost-note{
+    margin-top:12px;padding-top:12px;border-top:1px solid var(--hair);
+    font-size:13.5px;color:var(--steel);
+  }
+  .soon{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;
+    font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ttp-red);border:1px solid rgba(200,16,46,0.35);
+    border-radius:2px;padding:2px 7px;margin-left:8px;vertical-align:2px;
+  }
+
+  /* ---- in salt lake ---- */
+  .slc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
+  .slc-card{border:1px solid var(--hair-visible);border-radius:3px;padding:22px 22px;background:#ffffff;}
+  .slc-card h4{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--ttp-red);
+    margin:0 0 10px;
+  }
+  .slc-card p{font-size:14px;margin:0;color:var(--paper-text-2);}
+
+  /* ============ FOOTER ============ */
+  footer{padding:40px 0 46px;background:var(--ttp-navy);border-top:2px solid var(--ttp-red);}
+  .footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end;}
+  .footer-brand{font-family:'Fraunces',serif;font-size:17px;color:#ffffff;}
+  .footer-note{font-size:12.5px;color:rgba(255,255,255,0.55);max-width:44ch;line-height:1.6;}
+  .footer-right{font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.06em;text-align:right;}
+
+  @media (max-width:900px){
+    .slc-grid{grid-template-columns:1fr;}
+  }
+
+  @media (max-width:760px){
+    .wrap{padding:0 22px;}
+    section{padding:38px 0;}
+    .hero{padding:38px 0 34px;}
+    .why-grid{grid-template-columns:1fr;gap:28px;}
+    .roster-grid{grid-template-columns:1fr;}
+    .kby-grid{grid-template-columns:1fr;}
+    .map-grid{grid-template-columns:1fr;}
+    .ledger-row{grid-template-columns:1fr;gap:6px;}
+    .board-row{grid-template-columns:1fr;gap:6px;text-align:left;}
+    .board-time{text-align:left;}
+    .venue-panel{padding:26px;}
+    .rsvp-panel{padding:30px 24px;}
+    .stub{flex-direction:column;}
+    /* flex-basis maps to height once the axis flips — pin to content */
+    .stub-info,.stub-form{flex:0 0 auto;}
+    .stub-info{border-right:none;border-bottom:2px dashed rgba(35,31,22,0.18);}
+    .btn{width:100%;}
+    .support{text-align:left;}
+    footer{padding:32px 0 38px;}
+    .footer-right{text-align:left;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+
+  /* ============================================================
+     SITE NAVIGATION — added for the multi-page restructure.
+     Reuses existing tokens (--ttp-navy-2, --ttp-red, IBM Plex Mono)
+     rather than introducing new colors or type. Sits directly under
+     the existing .topbar on every page.
+     ============================================================ */
+  .site-nav{background:var(--ttp-navy-2);border-bottom:2px solid var(--ttp-red);}
+  .site-nav-inner{display:flex;align-items:center;gap:2px;flex-wrap:wrap;}
+  .site-nav a{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;
+    letter-spacing:0.08em;text-transform:uppercase;color:#c9d4f0;
+    text-decoration:none;padding:15px 18px;display:inline-block;
+    border-bottom:3px solid transparent;white-space:nowrap;
+    transition:color 0.15s ease,border-color 0.15s ease,background 0.15s ease;
+  }
+  .site-nav a:hover{color:#ffffff;}
+  .site-nav a.active{color:#ffffff;border-bottom-color:var(--ttp-red);}
+  .site-nav a.nav-cta{
+    margin-left:auto;background:var(--ttp-red);color:#ffffff !important;
+    border-radius:2px;padding:9px 18px;margin-top:10px;margin-bottom:10px;
+    border-bottom:none;font-weight:600;
+  }
+  .site-nav a.nav-cta:hover{background:#a00d25;}
+  .nav-toggle{display:none;}
+
+  /* ============ PAGE HERO (sub-pages: About, Agenda, Speakers, Hotel FAQ, RSVP) ============ */
+  .page-hero{background:var(--ttp-navy);padding:44px 0 38px;position:relative;overflow:hidden;}
+  .page-hero .wrap{position:relative;z-index:1;}
+  .page-hero .eyebrow{color:#f5f0e8;}
+  h1.page-title{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(30px,4.4vw,46px);line-height:1.1;letter-spacing:-0.01em;
+    color:#ffffff;margin:12px 0 0;max-width:24ch;text-wrap:balance;
+  }
+  .page-dek{color:#c9d4f0;font-size:16.5px;line-height:1.65;max-width:60ch;margin-top:16px;}
+
+  @media (max-width:760px){
+    .site-nav-inner{display:none;flex-direction:column;width:100%;}
+    .site-nav-inner.open{display:flex;}
+    .site-nav a{padding:14px 22px;border-bottom:1px solid rgba(255,255,255,0.08);border-left:3px solid transparent;}
+    .site-nav a.active{border-left-color:var(--ttp-red);border-bottom-color:rgba(255,255,255,0.08);}
+    .site-nav a.nav-cta{margin:10px 22px;text-align:center;display:block;}
+    .nav-toggle{
+      display:flex;align-items:center;justify-content:space-between;width:100%;
+      background:none;border:none;color:#ffffff;font-family:'IBM Plex Mono',monospace;
+      font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+      padding:14px 22px;cursor:pointer;
+    }
+    .nav-toggle .chev{transition:transform 0.15s ease;}
+    .nav-toggle[aria-expanded="true"] .chev{transform:rotate(180deg);}
+  }
+
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar" role="banner">
+  <div class="wrap topbar-inner">
+    <div class="brandmark">
+      <div class="ttp-logo">
+        <span class="ttp-logo-circle"><svg class="ttp-logo-img" width="26" height="26" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tech Talent Project logo"><polygon fill="#08368c" points="250 255.53 264.95 287.53 300 291.86 274.2 315.97 280.89 350.64 250 333.55 219.11 350.64 225.79 315.97 200 291.86 235.05 287.53 250 255.53"/><path fill="#c7162c" d="M82.67,180.89,41,144.67a276.88,276.88,0,0,1,418-.07l-41.66,36.24a221.66,221.66,0,0,0-334.67.06Z"/><path fill="#c7162c" d="M166.19,253l-41.58-36.32a166.54,166.54,0,0,1,250.89-.08l-41.57,36.34a111.34,111.34,0,0,0-167.74.06Z"/></svg></span>
+        <span class="ttp-wordmark">Tech Talent Project</span>
+      </div>
+      <div class="divider"></div>
+      <svg class="crossroads-logo-svg" viewBox="0 0 320 52" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crossroads 2026 Salt Lake City">
+  <text x="0" y="34" font-family="Archivo, Arial, sans-serif" font-size="34" font-weight="200" fill="#f5f0e8" letter-spacing="0.5">CROSSROADS</text>
+  <text x="2" y="50" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="400" fill="#c9d4f0" letter-spacing="2">2026 | SALT LAKE CITY</text>
+</svg>
+    </div>
+    <div class="support">
+      <span class="support-label">With support from</span>
+      <span class="dfc-logo-wrap"><img src="data:image/png;base64,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" alt="Data Funders Collaborative" class="dfc-logo-img"></span>
+    </div>
+  </div>
+</div>
+<nav class="site-nav" aria-label="Primary">
+  <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav-links" onclick="var b=this,l=document.getElementById('site-nav-links');var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));l.classList.toggle('open');">
+    Menu <span class="chev" aria-hidden="true">&#8964;</span>
+  </button>
+  <div class="wrap site-nav-inner" id="site-nav-links">
+      <a href="https://sites.google.com/techtalentproject.org/crossroads/crossroads">Home</a>
+      <a href="https://sites.google.com/techtalentproject.org/crossroads/about">About</a>
+      <a href="https://sites.google.com/techtalentproject.org/crossroads/agenda">Agenda</a>
+      <a href="https://sites.google.com/techtalentproject.org/crossroads/speakers">Speakers</a>
+      <a href="https://sites.google.com/techtalentproject.org/crossroads/accommodations" class="active" aria-current="page">Accommodations</a>
+      <a href="https://sites.google.com/techtalentproject.org/crossroads/rsvp" class="nav-cta">RSVP Now</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="accommodations" aria-labelledby="accommodations-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" id="accommodations-h">Accommodations</div>
+    </div>
+    <p>Asher Adams Hotel, Salt Lake City &mdash; the restored Union Pacific depot, and the site of the opening reception. Our room block is currently sold out. We will post an update if space becomes available.</p>
+      <div class="venue-meta" style="border-top:none;margin-top:0;padding-top:0;">
+        <div>
+          <p class="stub-label">Hotel</p>
+          <p class="stub-value">Asher Adams Hotel</p>
+        </div>
+      </div>
+    <div class="map-grid" style="margin-top:22px;grid-template-columns:1fr;max-width:360px;">
+      <div class="map-card">
+        <iframe loading="lazy" title="Map to Asher Adams Hotel" src="https://www.google.com/maps?q=2+S+400+W,+Salt+Lake+City,+UT+84101&output=embed"></iframe>
+        <div class="map-card-label">
+          <span class="tag">Hotel &amp; reception</span>
+          <h3 class="name">Asher Adams</h3>
+          <div class="addr">2 S 400 W, Salt Lake City, UT 84101</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="transportation" aria-labelledby="transportation-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" id="transportation-h">Transportation</div>
+    </div>
+    <ul>
+      <li>
+        <b>From the airport &mdash; light rail</b>
+        The <a class="link-brass" href="https://www.rideuta.com/" target="_blank" rel="noopener">UTA TRAX<span class="sr-only"> (Utah Transit Authority, opens in a new tab)</span></a> Green Line runs from the terminal to Arena Station, directly across from the Asher Adams. About 35 minutes, $2.50 one way. <a class="link-brass" href="https://slcairport.com/parking-and-transportation/public-transportation/" target="_blank" rel="noopener">Airport transit details<span class="sr-only"> (opens in a new tab)</span></a>.
+      </li>
+      <li>
+        <b>From the airport &mdash; car</b>
+        Taxi and rideshare run roughly 11 minutes and about $25 to the hotel.
+      </li>
+      <li>
+        <b>Around downtown</b>
+        The three venues are a 15&ndash;25 minute walk apart, or about 5 minutes by car. TRAX also connects them. <a class="link-brass" href="https://www.asheradamshotel.com/about/getting-here/" target="_blank" rel="noopener">Hotel directions and parking<span class="sr-only"> (opens in a new tab)</span></a>.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="in-salt-lake" aria-labelledby="slc-h">
+  <div class="wrap">
+    <h3 class="board-mount-label" style="color:var(--steel);" id="slc-h">In Salt Lake</h3>
+    <div class="slc-grid" role="group" aria-labelledby="slc-h">
+      <div class="slc-card">
+        <h4>Know</h4>
+        <p>Downtown sits around 4,300 feet and the air is dry &mdash; drink more water than feels necessary. October runs about 66&deg;F by day and 44&deg;F at night, and the first frost usually lands this month. Bring layers and a jacket for the evening walk to dinner.</p>
+      </div>
+      <div class="slc-card">
+        <h4>See</h4>
+        <p>The Utah State Capitol is a short ride north of downtown, free and open to the public on weekdays. Temple Square and City Creek sit a few blocks east of Pierpont Place.</p>
+      </div>
+      <div class="slc-card">
+        <h4>Do</h4>
+        <p>Early October is peak fall color in the Wasatch: Big and Little Cottonwood Canyons are 30&ndash;45 minutes from the hotel. If you have a free morning, Antelope Island on the Great Salt Lake is about an hour north.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Crossroads &middot; 2026</div>
+      <p class="footer-note" style="margin-top:8px;">Convened by Tech Talent Project, with the American Enterprise Institute, the Beeck Center for Social Impact &amp; Innovation at Georgetown, and New America. With support from the Data Funders Collaborative.</p>
+    </div>
+    <div class="footer-right">
+      This page is provided for invited guests only.<br>
+      Please check with the host before sharing.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.getElementById('site-nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', function(){
+      // handled inline above for no-JS-framework simplicity; this listener
+      // is a no-op safety net in case the inline handler is stripped.
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
