@@ -218,50 +218,53 @@
     font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
     color:#c9d4f0;
   }
-  .board-mount-label::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.15);}
-  .board{background:var(--ttp-navy);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:6px;box-shadow:0 18px 40px -18px rgba(0,0,0,0.4);}
-  .board-inner{background:var(--ttp-navy);border-radius:2px;overflow:hidden;list-style:none;margin:0;padding:0;}
-  .board-row{display:grid;grid-template-columns:96px 1fr 170px;gap:18px;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.12);font-family:'IBM Plex Mono',monospace;}
-  .board-row:last-child{border-bottom:none;}
+  .board-mount-label::after{content:"";flex:1;height:1px;background:var(--hair-visible);}
+  /* ===== Agenda board: dark day headers, light alternating session rows ===== */
+  .board{list-style:none;margin:0;padding:0;}
+  .board-inner{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;}
+  .board-day{border:1px solid var(--hair-visible);border-radius:4px;overflow:hidden;background:#ffffff;box-shadow:0 14px 30px -20px rgba(26,39,68,0.35);}
+  .board-day > summary{list-style:none;cursor:pointer;user-select:none;display:block;background:var(--ttp-navy);}
+  .board-day > summary::-webkit-details-marker{display:none;}
+  .board-day > summary:focus-visible{outline:3px solid var(--ttp-red);outline-offset:-3px;}
+  .board-row{display:grid;grid-template-columns:96px 1fr 190px;gap:18px;align-items:center;padding:18px 22px 6px;font-family:'IBM Plex Mono',monospace;}
   .board-date{color:#f5f0e8;font-size:14px;letter-spacing:0.03em;line-height:1.4;}
   .board-date .wd{display:block;font-size:10.5px;color:#c9d4f0;letter-spacing:0.1em;}
-  .board-event .name{color:#ffffff;font-size:14.5px;letter-spacing:0.03em;text-transform:uppercase;display:block;margin-bottom:3px;}
-  .board-event .venue{color:#c9d4f0;font-size:12.5px;letter-spacing:0.02em;text-transform:none;}
-  .board-event .venue a{color:#f5f0e8;text-decoration:underline;text-decoration-color:rgba(245,240,232,0.4);text-underline-offset:2px;}
-  .board-event .venue a:hover{text-decoration-color:#f5f0e8;}
-  .board-time{color:#c9d4f0;font-size:13px;text-align:right;letter-spacing:0.03em;}
-  /* Session rows inside the board */
-  /* Accordion: each day opens with "Read more", matching the Speakers page */
-  .board-inner > li{border-bottom:1px solid rgba(255,255,255,0.12);}
-  .board-inner > li:last-child{border-bottom:none;}
-  .board-day > summary{list-style:none;cursor:pointer;user-select:none;}
-  .board-day > summary::-webkit-details-marker{display:none;}
-  .board-day > summary .board-row{border-bottom:none;}
-  .board-day > summary:hover .more-label{text-decoration:underline;text-underline-offset:3px;}
-  .board-day > summary:focus-visible{outline:2px solid #f5f0e8;outline-offset:-4px;}
-  .more-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#f5f0e8;font-weight:600;}
-  .more-label::after{content:" +";}
-  .day-hours{display:block;margin-bottom:6px;}
-  .board-day .more-label{display:block;}
-  .board-day[open] .more-label::after{content:" \2013";}
-  .board-day[open] > summary .board-row{border-bottom:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.04);}
+  .board-event .name{color:#ffffff;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;display:block;margin-bottom:3px;}
+  .board-event .venue{color:#c9d4f0;font-size:12.5px;letter-spacing:0.02em;}
+  .board-time{color:#f5f0e8;font-size:13.5px;text-align:right;letter-spacing:0.03em;}
+  /* Centered "see sessions" arrow at the bottom of each day header */
+  .day-toggle{display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 0 14px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#f5f0e8;}
+  .day-toggle .arrow{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid #f5f0e8;transition:transform .25s ease,background .2s ease;}
+  .day-toggle .arrow svg{width:16px;height:16px;}
+  .board-day > summary:hover .arrow{background:var(--ttp-red);border-color:var(--ttp-red);}
+  .day-toggle .t-open{display:none;}
+  .board-day[open] .day-toggle .t-open{display:inline;}
+  .board-day[open] .day-toggle .t-closed{display:none;}
+  .board-day[open] .day-toggle .arrow{transform:rotate(180deg);}
+  /* Session rows */
   .board-sessions{list-style:none;margin:0;padding:0;}
-  .board-session{display:grid;grid-template-columns:96px 1fr 170px;gap:18px;align-items:baseline;padding:11px 20px;border-bottom:1px solid rgba(255,255,255,0.08);}
-  .board-session:last-child{border-bottom:none;}
-  .board-session .s-title{grid-column:2;color:#ffffff;font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.45;}
-  .board-session .s-time{grid-column:3;color:#c9d4f0;font-family:'IBM Plex Mono',monospace;font-size:13px;text-align:right;letter-spacing:0.02em;}
-  .board-session.is-pause .s-title{color:#c9d4f0;font-style:italic;}
-  .board-session .s-sub{list-style:none;margin:8px 0 2px;padding:0 0 0 12px;border-left:2px solid var(--ttp-red);}
-  .board-session .s-sub li{font-size:13.5px;color:#c9d4f0;line-height:1.5;padding:3px 0;}
-  .board-session .s-sub li b{color:#ffffff;font-weight:500;}
-  .board-session .s-venue{display:block;font-size:13px;color:#c9d4f0;}
-  .board-session .s-venue a{color:#f5f0e8;text-decoration:underline;text-decoration-color:rgba(245,240,232,0.4);text-underline-offset:2px;}
+  .board-session{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:baseline;padding:13px 22px;border-top:1px solid var(--hair);background:#ffffff;}
+  .board-session:nth-child(even){background:var(--paper);}
+  .s-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);}
+  .s-title{color:var(--ttp-navy);font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:500;line-height:1.45;}
+  .s-sub{display:block;font-size:14px;font-weight:400;color:var(--paper-text-2);margin-top:2px;}
+  .s-sub a{color:var(--ttp-navy);text-decoration:underline;text-decoration-color:var(--hair-visible);text-underline-offset:2px;}
+  .s-sub a:hover{text-decoration-color:var(--ttp-navy);}
+  /* Spotlights and lightning talks: italic with a red tag */
+  .board-session.is-spotlight .s-tag{color:var(--ttp-red);font-weight:600;}
+  .board-session.is-spotlight .s-title{font-style:italic;font-weight:400;color:var(--ttp-navy-2);}
+  /* Meals and breaks: quiet mono labels */
+  .board-session.is-pause .s-title{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);}
+  .s-list{list-style:none;margin:10px 0 2px;padding:0 0 0 12px;border-left:2px solid var(--ttp-red);}
+  .s-list li{font-size:14.5px;font-weight:400;color:var(--paper-text-2);line-height:1.5;padding:3px 0;}
+  .s-list li b{color:var(--ttp-navy);font-weight:500;}
+  .board-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 2px 0;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--steel);text-transform:uppercase;}
   @media (max-width:760px){
-    .board-session{grid-template-columns:1fr;gap:2px;}
-    .board-session .s-title,.board-session .s-time{grid-column:1;text-align:left;}
-    .board-session .s-time{order:-1;}
+    .board-row{grid-template-columns:1fr;gap:6px;padding:18px 20px 6px;}
+    .board-time{text-align:left;}
+    .board-session{grid-template-columns:1fr;gap:3px;padding:13px 20px;}
+    .s-tag:empty{display:none;}
   }
-  .board-foot{display:flex;justify-content:space-between;align-items:center;padding:13px 20px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:#c9d4f0;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.12);}
 
   /* ============ MAP ============ */
   .map-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
@@ -376,8 +379,6 @@
     .kby-grid{grid-template-columns:1fr;}
     .map-grid{grid-template-columns:1fr;}
     .ledger-row{grid-template-columns:1fr;gap:6px;}
-    .board-row{grid-template-columns:1fr;gap:6px;text-align:left;}
-    .board-time{text-align:left;}
     .venue-panel{padding:26px;}
     .rsvp-panel{padding:30px 24px;}
     .stub{flex-direction:column;}
@@ -501,12 +502,14 @@
                   <span class="name">Opening reception</span>
                   <span class="venue">No.&nbsp;119, Asher Adams</span>
                 </span>
-                <span class="board-time"><span class="day-hours">6:30&ndash;9:30&nbsp;p.m.</span><span class="more-label">Read more</span></span>
+                <span class="board-time">6:30&ndash;9:30&nbsp;p.m.</span>
               </div>
+              <span class="day-toggle"><span class="t-closed">See sessions</span><span class="t-open">Hide sessions</span><span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
             </summary>
             <ol class="board-sessions">
               <li class="board-session">
-                <span class="s-title">Opening Reception and Keynote Conversation<span class="s-venue"><a href="https://www.asheradamshotel.com/dine/no-119/" target="_blank" rel="noopener">Venue details<span class="sr-only"> about No. 119 at Asher Adams (opens in a new tab)</span></a></span></span>
+                <span class="s-tag"></span>
+                <span class="s-title">Opening Reception and Keynote Conversation<span class="s-sub"><a href="https://www.asheradamshotel.com/dine/no-119/" target="_blank" rel="noopener">Venue details<span class="sr-only"> about No. 119 at Asher Adams (opens in a new tab)</span></a></span></span>
               </li>
             </ol>
           </details>
@@ -520,61 +523,86 @@
                   <span class="name">Crossroads day 1</span>
                   <span class="venue">Pierpont Place</span>
                 </span>
-                <span class="board-time"><span class="day-hours">8&nbsp;a.m.&ndash;4:40&nbsp;p.m.</span><span class="more-label">Read more</span></span>
+                <span class="board-time">8&nbsp;a.m.&ndash;4:40&nbsp;p.m.</span>
               </div>
+              <span class="day-toggle"><span class="t-closed">See sessions</span><span class="t-open">Hide sessions</span><span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
             </summary>
             <ol class="board-sessions">
               <li class="board-session is-pause">
+                <span class="s-tag"></span>
                 <span class="s-title">Breakfast</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">Morning Opening: The Crossroads Moment</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">Welcome Plenary</span>
               </li>
-              <li class="board-session">
+              <li class="board-session is-spotlight">
+                <span class="s-tag">Spotlight</span>
                 <span class="s-title">Talent State Spotlight and Lightning Talk</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">The Governor&rsquo;s Administration and Transition</span>
               </li>
-              <li class="board-session">
+              <li class="board-session is-pause">
+                <span class="s-tag"></span>
+                <span class="s-title">Break</span>
+              </li>
+              <li class="board-session is-spotlight">
+                <span class="s-tag">Spotlight</span>
                 <span class="s-title">Permitting State Spotlight and Lightning Talk</span>
               </li>
               <li class="board-session">
-                <span class="s-title">Breakout Sessions &ndash; Transition 2027: The Crossroads Moment<ul class="s-sub">
+                <span class="s-tag"></span>
+                <span class="s-title">Breakout Sessions &ndash; Transition 2027: The Crossroads Moment<ul class="s-list">
                     <li><b>The Talent Moment:</b> Preparing states for tech and tech-fluent leaders in the new AI and data era</li>
                     <li><b>The H.R. 1 Moment:</b> What are new governors going to find, and what resources are needed?</li>
                     <li><b>The Budget and Evidence Moment:</b> Investing in what works has never mattered more, and states need to align data on results while planning their budget moves now</li>
                   </ul></span>
               </li>
-              <li class="board-session">
+              <li class="board-session is-spotlight">
+                <span class="s-tag">Spotlight</span>
                 <span class="s-title">Customer Experience State Spotlight and Lightning Talk: Ohio</span>
               </li>
               <li class="board-session is-pause">
+                <span class="s-tag"></span>
                 <span class="s-title">Lunch</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">State Chiefs of Staff in the Age of AI</span>
               </li>
-              <li class="board-session">
+              <li class="board-session is-spotlight">
+                <span class="s-tag">Spotlight</span>
                 <span class="s-title">Procurement State Spotlight and Lightning Talk</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">Medicaid Panel: Critical Challenges Facing States in 2027</span>
               </li>
-              <li class="board-session">
-                <span class="s-title">State Government and the AI Moment</span>
+              <li class="board-session is-pause">
+                <span class="s-tag"></span>
+                <span class="s-title">Break</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
+                <span class="s-title">State Government and the AI Moment</span>
+              </li>
+              <li class="board-session is-spotlight">
+                <span class="s-tag">Spotlight</span>
                 <span class="s-title">Data State Spotlight and Lightning Talk: Hawaii</span>
               </li>
               <li class="board-session">
-                <span class="s-title">How Do You Instill Lasting Change via Transition? Virginia and New Jersey</span>
+                <span class="s-tag"></span>
+                <span class="s-title">How Do You Instill Lasting Change via Transition? Lessons from Virginia and New Jersey</span>
               </li>
               <li class="board-session">
-                <span class="s-title">Hosted Dinner<span class="s-venue">Caffe Molise &middot; <a href="https://www.caffemolise.com/" target="_blank" rel="noopener">details<span class="sr-only"> about Caffe Molise (opens in a new tab)</span></a></span></span>
+                <span class="s-tag"></span>
+                <span class="s-title">Hosted Dinner<span class="s-sub">Caffe Molise &middot; <a href="https://www.caffemolise.com/" target="_blank" rel="noopener">details<span class="sr-only"> about Caffe Molise (opens in a new tab)</span></a></span></span>
               </li>
             </ol>
           </details>
@@ -588,23 +616,33 @@
                   <span class="name">Crossroads day 2</span>
                   <span class="venue">Pierpont Place</span>
                 </span>
-                <span class="board-time"><span class="day-hours">9&nbsp;a.m.&ndash;12:05&nbsp;p.m.</span><span class="more-label">Read more</span></span>
+                <span class="board-time">9&nbsp;a.m.&ndash;12:05&nbsp;p.m.</span>
               </div>
+              <span class="day-toggle"><span class="t-closed">See sessions</span><span class="t-open">Hide sessions</span><span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
             </summary>
             <ol class="board-sessions">
               <li class="board-session">
-                <span class="s-title">Livestream Plenary</span>
+                <span class="s-tag"></span>
+                <span class="s-title">Plenary<span class="s-sub">Former Massachusetts Gov. Charlie Baker</span></span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">Chief Data Officer Panel</span>
               </li>
               <li class="board-session">
-                <span class="s-title">Crossroads Closing Keynote</span>
+                <span class="s-tag"></span>
+                <span class="s-title">Crossroads Closing Keynote<span class="s-sub">Former Maryland Gov. Martin O&rsquo;Malley</span></span>
+              </li>
+              <li class="board-session is-pause">
+                <span class="s-tag"></span>
+                <span class="s-title">Break</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">Transition Window Strategy Session</span>
               </li>
               <li class="board-session">
+                <span class="s-tag"></span>
                 <span class="s-title">Closing</span>
               </li>
             </ol>
