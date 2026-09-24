@@ -241,6 +241,8 @@
   .board-day > summary:focus-visible{outline:2px solid #f5f0e8;outline-offset:-4px;}
   .more-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#f5f0e8;font-weight:600;}
   .more-label::after{content:" +";}
+  .day-hours{display:block;margin-bottom:6px;}
+  .board-day .more-label{display:block;}
   .board-day[open] .more-label::after{content:" \2013";}
   .board-day[open] > summary .board-row{border-bottom:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.04);}
   .board-sessions{list-style:none;margin:0;padding:0;}
@@ -499,7 +501,7 @@
                   <span class="name">Opening reception</span>
                   <span class="venue">No.&nbsp;119, Asher Adams</span>
                 </span>
-                <span class="board-time"><span class="more-label">Read more</span></span>
+                <span class="board-time"><span class="day-hours">6:30&ndash;9:30&nbsp;p.m.</span><span class="more-label">Read more</span></span>
               </div>
             </summary>
             <ol class="board-sessions">
@@ -518,7 +520,7 @@
                   <span class="name">Crossroads day 1</span>
                   <span class="venue">Pierpont Place</span>
                 </span>
-                <span class="board-time"><span class="more-label">Read more</span></span>
+                <span class="board-time"><span class="day-hours">8&nbsp;a.m.&ndash;4:40&nbsp;p.m.</span><span class="more-label">Read more</span></span>
               </div>
             </summary>
             <ol class="board-sessions">
@@ -586,7 +588,7 @@
                   <span class="name">Crossroads day 2</span>
                   <span class="venue">Pierpont Place</span>
                 </span>
-                <span class="board-time"><span class="more-label">Read more</span></span>
+                <span class="board-time"><span class="day-hours">9&nbsp;a.m.&ndash;12:05&nbsp;p.m.</span><span class="more-label">Read more</span></span>
               </div>
             </summary>
             <ol class="board-sessions">
