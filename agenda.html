@@ -243,8 +243,11 @@
   .board-day[open] .day-toggle .arrow{transform:rotate(180deg);}
   /* Session rows */
   .board-sessions{list-style:none;margin:0;padding:0;}
-  .board-session{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:baseline;padding:13px 22px;border-top:1px solid var(--hair);background:#ffffff;}
+  .board-session{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:baseline;padding:13px 22px;border-top:1px solid var(--hair);background:#ffffff;}
   .board-session:nth-child(even){background:var(--paper);}
+  .s-when{display:flex;flex-direction:column;gap:5px;}
+  .s-time{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.01em;color:var(--ttp-navy);white-space:nowrap;}
+  .board-session.is-pause .s-time{color:var(--steel);}
   .s-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);}
   .s-title{color:var(--ttp-navy);font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:500;line-height:1.45;}
   .s-sub{display:block;font-size:14px;font-weight:400;color:var(--paper-text-2);margin-top:2px;}
@@ -271,6 +274,7 @@
     .board-time{text-align:left;}
     .board-session{grid-template-columns:1fr;gap:3px;padding:13px 20px;}
     .s-tag:empty{display:none;}
+    .s-when{flex-direction:row;align-items:baseline;gap:12px;}
   }
 
   /* ============ MAP ============ */
@@ -515,11 +519,11 @@
             </summary>
             <ol class="board-sessions">
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">6:30&ndash;8:45&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Opening Reception and Keynote Conversation<span class="s-sub">Second floor &middot; <a href="https://www.asheradamshotel.com/dine/no-119/" target="_blank" rel="noopener">Venue details<span class="sr-only"> about No. 119 at Asher Adams (opens in a new tab)</span></a></span></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">7:15&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Fireside Chat<ul class="s-people">
                     <li><b>Jen Pahlka</b>, Board Chair, Recoding America and Senior Fellow, Johns Hopkins School of Government and Policy</li>
                   </ul></span>
@@ -542,20 +546,20 @@
             </summary>
             <ol class="board-sessions">
               <li class="board-session is-pause">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">8&ndash;9&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Breakfast</span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">9&ndash;9:10&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Morning Opening<span class="s-sub">Welcome from Tech Talent Project, the American Enterprise Institute, New America and the Beeck Center</span><ul class="s-people">
                     <li><b>Jennifer Anastasoff</b>, Founder and Executive Director, Tech Talent Project</li>
                     <li><b>John Bailey</b>, Nonresident Senior Fellow, American Enterprise Institute and Tech Talent Project State Transition Memos Co-Chair</li>
                     <li><b>Amira Boland</b>, Chief of Staff, New Practice Lab</li>
                     <li><b>Lynn Overmann</b>, Executive Director, Beeck Center for Social Impact + Innovation, Georgetown University</li>
-                  </ul></span>
+                  </ul><span class="s-sub"><b>Welcome to Utah!</b></span></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">9:10&ndash;9:40&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Welcome Plenary: Data in the Crossroads Moment [Chief Data Officer Panel]<ul class="s-people">
                     <li><span class="p-label">Facilitator</span><b>Lynn Overmann</b>, Executive Director, Beeck Center for Social Impact + Innovation, Georgetown University</li>
                     <li><b>Joe Kirby</b>, Director of Data and Analytics, State of Missouri</li>
@@ -563,14 +567,14 @@
                   </ul></span>
               </li>
               <li class="board-session is-spotlight">
-                <span class="s-tag">Spotlight</span>
+                <span class="s-when"><span class="s-time">9:45&ndash;9:55&nbsp;a.m.</span><span class="s-tag">Spotlight</span></span>
                 <span class="s-title">State Spotlight and Lightning Talk: Talent<ul class="s-people">
                     <li><span class="p-label">Spotlight</span><b>Sarah Tuneberg</b>, Chief Information Officer and Executive Director, Colorado Governor&rsquo;s Office of Information Technology</li>
                     <li><span class="p-label">Lightning talk</span><b>Faith Savaiano</b>, Tech Talent Project State Transition Fellow</li>
                   </ul></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">10&ndash;10:30&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">The Governor&rsquo;s Administration and Transition<ul class="s-people">
                     <li><b>Julia Dale</b>, CEO, Civilla</li>
                     <li><b>Justin Brown</b>, CEO, Global True North and Former Oklahoma Secretary of Human Services</li>
@@ -578,36 +582,36 @@
                   </ul></span>
               </li>
               <li class="board-session is-pause">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">10:30&ndash;10:50&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Break</span>
               </li>
               <li class="board-session is-spotlight">
-                <span class="s-tag">Spotlight</span>
+                <span class="s-when"><span class="s-time">10:50&ndash;11&nbsp;a.m.</span><span class="s-tag">Spotlight</span></span>
                 <span class="s-title">State Spotlight and Lightning Talk: Permitting<ul class="s-people">
                     <li><b>Nikki Chiappa</b>, Permitting Innovation Lead, EPIC</li>
                   </ul></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
-                <span class="s-title">Breakout Sessions &ndash; Transition 2027: The Crossroads Moment<span class="s-sub">Every gubernatorial transition has challenges and opportunities. 2027 has some unique ones that are still unfolding.</span><ul class="s-list">
+                <span class="s-when"><span class="s-time">11&ndash;11:40&nbsp;a.m.</span><span class="s-tag"></span></span>
+                <span class="s-title">Breakout Sessions &ndash; Transition 2027: The Crossroads Moment<span class="s-sub">Every gubernatorial transition has challenges and opportunities. 2027 has some unique ones that are still unfolding. (30-minute session, 10-minute return and report-out)</span><ul class="s-list">
                     <li><b>The Talent Moment:</b> Preparing states for tech and tech-fluent leaders in the new AI and data era<span class="b-lead">Lead: <b>Jennifer Anastasoff</b>, Founder and Executive Director, Tech Talent Project</span></li>
                     <li><b>The H.R. 1 Moment:</b> What are new governors going to find, and what resources are needed?<span class="b-lead">Leads: <b>Rebecca Piazza</b>, Executive Director of Safety Net Strategy, Code for America; and <b>Greg Novick</b>, Director, Medicaid Delivery Innovation Initiative, Tech Talent Project</span></li>
-                    <li><b>The Budget and Evidence Moment:</b> Investing in what works has never mattered more, and states need to align data on performance and results while planning their budget moves now<span class="b-lead">Leads: <b>Sarah Needler</b>, Director for State Impact, Results for America; and <b>Brent Packer</b>, State of Utah</span></li>
+                    <li><b>The Budget and Evidence Moment:</b> Investing in what works has never mattered more, and states need to align data on performance and results while planning their budget moves now<span class="b-lead">Leads: <b>Sarah Needler</b>, Director for State Impact, Results for America; and <b>Brent Packer</b>, Performance Audit Supervisor, Utah Office of the Legislative Auditor General</span></li>
                   </ul></span>
               </li>
               <li class="board-session is-spotlight">
-                <span class="s-tag">Spotlight</span>
+                <span class="s-when"><span class="s-time">11:40&ndash;11:50&nbsp;a.m.</span><span class="s-tag">Spotlight</span></span>
                 <span class="s-title">State Spotlight and Lightning Talk: Customer Experience<ul class="s-people">
                     <li><b>Beverly Martin</b>, Chief Transformation Officer, Ohio Department of Job and Family Services</li>
                     <li><b>Amira Boland</b>, Chief of Staff, New Practice Lab</li>
                   </ul></span>
               </li>
               <li class="board-session is-pause">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">Noon&ndash;1&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Lunch</span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">1&ndash;1:40&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">State Chiefs of Staff and Transition<span class="s-sub">Opening video: State Leaders on Transition</span><ul class="s-people">
                     <li><b>JoAnne Huls</b>, Founder, FreshWater Strategies</li>
                     <li><b>Heidi Tringe</b>, President and Founder, Elevate State Solutions</li>
@@ -615,14 +619,14 @@
                   </ul></span>
               </li>
               <li class="board-session is-spotlight">
-                <span class="s-tag">Spotlight</span>
+                <span class="s-when"><span class="s-time">1:40&ndash;1:50&nbsp;p.m.</span><span class="s-tag">Spotlight</span></span>
                 <span class="s-title">State Spotlight and Lightning Talk: Data<ul class="s-people">
                     <li><b>Rebecca Cai</b>, Chief Data Officer, State of Hawaii</li>
                     <li><b>Denice Ross</b>, Director of Federal Data Policy, Federation of American Scientists</li>
                   </ul></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">2&ndash;2:50&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Medicaid Panel: Critical Challenges Facing States in 2027<ul class="s-people">
                     <li><span class="p-label">Facilitator</span><b>Jennifer Anastasoff</b>, Founder and Executive Director, Tech Talent Project</li>
                     <li><b>Greg Novick</b>, Director, Medicaid Delivery Innovation Initiative, Tech Talent Project</li>
@@ -631,11 +635,11 @@
                   </ul></span>
               </li>
               <li class="board-session is-pause">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">2:50&ndash;3:10&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Break</span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">3:10&ndash;3:55&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">State Technology Officers and the AI Moment<ul class="s-people">
                     <li><b>Chris Given</b>, Digital Service Delivery Leader, Federal and State Government</li>
                     <li><b>Nikhil Deshpande</b>, Chief Digital and Artificial Intelligence Officer, Georgia Technology Authority</li>
@@ -644,14 +648,14 @@
                   </ul></span>
               </li>
               <li class="board-session is-spotlight">
-                <span class="s-tag">Spotlight</span>
+                <span class="s-when"><span class="s-time">3:55&ndash;4:05&nbsp;p.m.</span><span class="s-tag">Spotlight</span></span>
                 <span class="s-title">State Spotlight and Lightning Talk: Procurement<ul class="s-people">
                     <li><b>Liz Coalts</b>, Deputy Commissioner of Modernization, North Carolina Division of Motor Vehicles</li>
                     <li><b>Jaidie Vargas</b>, Assistant Director of Technology Delivery, Partners for Public Good</li>
                   </ul></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">4:10&ndash;4:40&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">How Do You Instill Lasting Change via Transition? Lessons from Virginia and New Jersey<ul class="s-people">
                     <li><b>Andrea Fletcher</b>, Director, Virginia Digital Service</li>
                     <li><b>Giuseppe Morgana</b>, Co-Founder and Chief Technology Officer, New Harbor</li>
@@ -659,15 +663,15 @@
                   </ul></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">4:40&ndash;4:45&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Wrap-Up</span>
               </li>
               <li class="board-session is-pause">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">4:45&ndash;6&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Free Time</span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">6&ndash;9&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Hosted Dinner<span class="s-sub">Caffe Molise &middot; <a href="https://www.caffemolise.com/" target="_blank" rel="noopener">details<span class="sr-only"> about Caffe Molise (opens in a new tab)</span></a></span></span>
               </li>
             </ol>
@@ -688,49 +692,49 @@
             </summary>
             <ol class="board-sessions">
               <li class="board-session is-pause">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">8&ndash;8:45&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Breakfast</span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">8:45&ndash;9&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Morning Opening</span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">9&ndash;9:30&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Plenary<ul class="s-people">
                     <li><b>Charlie Baker</b>, President, National Collegiate Athletic Association and Former Governor of Massachusetts (via video livestream)</li>
                     <li><span class="p-label">Moderator</span><b>Dana Chisnell</b>, Tech Talent Project State Transition Fellow on Customer Experience and Emergency Management</li>
                   </ul></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">9:30&ndash;10:15&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Transition Launch Whistlestop Tour<ul class="s-people">
                     <li><span class="p-label">Facilitator</span><b>Dana Chisnell</b>, Tech Talent Project State Transition Fellow on Customer Experience and Emergency Management</li>
                     <li><span class="p-label">Facilitator</span><b>Anil Dewan</b>, Tech Talent Project State Transition Fellow on AI</li>
                     <li><span class="p-label">Facilitator</span><b>Faith Savaiano</b>, Tech Talent Project State Transition Fellow</li>
-                  </ul><span class="s-sub">Transition planning is already starting and hits full steam on Nov. 4. This convening is about helping to supercharge new and returning administrations. Let&rsquo;s put it into action. All aboard!</span><span class="s-sub"><b>Prompt:</b> How can we make sure our collective contributions land? We&rsquo;ve heard the why. Help us make it count with the who, where and how.</span><ul class="s-list">
+                  </ul><span class="s-sub">Transition planning is already starting and hits full steam on Nov. 4. This convening is about helping to supercharge new and returning administrations. Let&rsquo;s put it into action. All aboard!</span><span class="s-sub"><b>Prompt:</b> How can we make sure our collective contributions land? We&rsquo;ve heard the why. Help us make it count with the who, where and how.</span><span class="s-sub"><b>Activity:</b> Whistlestop through the breakout rooms to talk about:</span><ul class="s-list">
                     <li><b>Who:</b> Who are specific people and groups engaged, or about to be engaged, in state transitions? Who needs to know about the great insights in this room? Do you know them?</li>
                     <li><b>Where:</b> Where are existing forums for transition teams to get briefings? What would a great forum look like that doesn&rsquo;t exist?</li>
                     <li><b>How:</b> How do states do so much important work before they&rsquo;re fully staffed? Or when they need some specific expertise? Who are the groups that can help states in transition and the first 100 days and beyond, and how do we all work together in this moment of planned crisis? (Hint: Several are here!)</li>
                   </ul></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">10:20&ndash;11&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Crossroads Closing Keynote<ul class="s-people">
                     <li><b>Martin O&rsquo;Malley</b>, Former Governor of Maryland and Former Commissioner, Social Security Administration</li>
                     <li><span class="p-label">Moderator</span><b>Betsy Beaumon</b>, Director of State Tech Transitions, Tech Talent Project</li>
                   </ul></span>
               </li>
               <li class="board-session is-pause">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">11&ndash;11:20&nbsp;a.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Break</span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">11:20&nbsp;a.m.&ndash;noon</span><span class="s-tag"></span></span>
                 <span class="s-title">Hot Topics: Unconference<span class="s-sub">Top three to four topics proposed by attendees for a deeper dive, or things we missed. Facilitators vary by topic.</span></span>
               </li>
               <li class="board-session">
-                <span class="s-tag"></span>
+                <span class="s-when"><span class="s-time">Noon&ndash;12:15&nbsp;p.m.</span><span class="s-tag"></span></span>
                 <span class="s-title">Closing Remarks</span>
               </li>
             </ol>
